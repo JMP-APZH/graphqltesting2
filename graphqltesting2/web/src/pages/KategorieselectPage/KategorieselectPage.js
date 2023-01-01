@@ -64,7 +64,7 @@ const KategorieselectPage = () => {
           <div className='flex justify-center items-center gap-36'>
           <p className='flex flex-col justify-center items-center h-12 w-12 p-1 text-2xl'>
             <CiAt />
-            <p className='absolute flex justify-center items-center text-xs bg-black text-white font-bold rounded-full w-4 h-4 ml-6 mb-6'>4</p>
+            <p className='absolute flex justify-center items-center text-xs bg-red-600 text-white font-bold rounded-full w-4 h-4 ml-6 mb-6'>4</p>
           </p>
           <p className='border border-solid border-black p-1'>Fertig</p>
         </div>
@@ -83,11 +83,11 @@ const KategorieselectPage = () => {
           <div className='flex flex-row pl-10 gap-6'>
           <img
             src={wheel_bw}
-            width="25"
-            height="25"
+            width="35"
+            height="35"
             className=''
           />
-          <div className='w-4'>
+          <div className='w-8'>
 
           </div>
           </div>
@@ -99,14 +99,21 @@ const KategorieselectPage = () => {
           <div className='flex flex-row pl-14 gap-6'>
           <img
             src={wheel_bw}
-            width="25"
-            height="25"
+            width="35"
+            height="35"
           />
+
+          <Link
+            to={routes.subkategories()}
+            className='flex items-center'
+          >
           <img
             src={arrow_bw}
-            width="20"
-            height="20"
+            width="35"
+
           />
+          </Link>
+
           </div>
 
 
@@ -116,14 +123,19 @@ const KategorieselectPage = () => {
           <div className='flex flex-row gap-6 pl-8'>
           <img
             src={wheel_bw}
-            width="25"
-            height="25"
+            width="35"
+            height="35"
           />
+           <Link
+            to={routes.subkategories()}
+            className='flex items-center'
+          >
           <img
             src={arrow_bw}
-            width="20"
-            height="20"
+            width="35"
+
           />
+          </Link>
           </div>
         </p>
         <p className='flex text-center items-center justify-center w-60 h-12 gap-2 bg-white border border-solid border-black p-2'>
@@ -131,14 +143,19 @@ const KategorieselectPage = () => {
           <div className='flex flex-row gap-6 pl-1'>
           <img
             src={wheel_bw}
-            width="25"
-            height="25"
+            width="35"
+            height="35"
           />
+           <Link
+            to={routes.subkategories()}
+            className='flex items-center'
+          >
           <img
             src={arrow_bw}
-            width="20"
-            height="20"
+            width="35"
+
           />
+          </Link>
           </div>
         </p>
       </div>
