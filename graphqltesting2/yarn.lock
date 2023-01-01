@@ -23598,6 +23598,7 @@ __metadata:
     "@redwoodjs/router": 3.8.0
     "@redwoodjs/web": 3.8.0
     autoprefixer: ^10.4.13
+    humanize-string: 2.1.0
     postcss: ^8.4.20
     postcss-loader: ^7.0.2
     prop-types: 15.8.1
