@@ -6,6 +6,10 @@ import arrow_bw from './arrow_bw.png'
 import left_arrow from './left_arrow.png'
 import plus_black from './plus_black.jpg'
 
+import { FaUserPlus } from "react-icons/fa";
+import { AiFillStar } from "react-icons/ai";
+import { CiAt } from "react-icons/ci";
+
 const KategorieselectPage = () => {
   return (
     <>
@@ -25,6 +29,9 @@ const KategorieselectPage = () => {
             height="20"
           />
         </div>
+
+        <div className='flex flex-col items-center justify-center gap-2'>
+
         <div className='flex justify-end w-full'>
           <img
             src={plus_black}
@@ -32,12 +39,33 @@ const KategorieselectPage = () => {
             height="20"
           />
         </div>
+
+        <div className=''>
+        <FaUserPlus
+          width="35"
+          height="35"
+        />
         </div>
 
-          <div className='h-36 w-36 bg-black rounded-full relative'></div>
+        <div className=''>
+        <AiFillStar
+          width="35"
+          height="35"
+        />
+        </div>
+
+        </div>
+
+
+        </div>
+
+          <div className='h-48 w-48 bg-black rounded-full relative'></div>
           <p className='absolute text-center text-white'>Entscheidungsrad</p>
           <div className='flex justify-center items-center gap-36'>
-          <p className='border border-solid border-black p-1'>Chat</p>
+          <p className='flex flex-col justify-center items-center h-12 w-12 p-1 text-2xl'>
+            <CiAt />
+            <p className='absolute flex justify-center items-center text-xs bg-black text-white font-bold rounded-full w-4 h-4 ml-6 mb-6'>4</p>
+          </p>
           <p className='border border-solid border-black p-1'>Fertig</p>
         </div>
         </div>
