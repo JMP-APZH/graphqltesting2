@@ -1,6 +1,14 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
+import React, { useEffect } from 'react';
+import { StyleSheet, View, Text } from 'react-native';
+import * as Contacts from 'expo-contacts';
+
+
+// import EventEmitter from '../vendor/emitter/EventEmitter';
+// import type {IEventEmitter} from '../vendor/emitter/EventEmitter';
+
 import wheel_bw from './luckywheel_bw.png'
 import arrow_bw from './arrow_bw.png'
 import left_arrow from './left_arrow.png'
@@ -11,13 +19,76 @@ import { AiFillStar } from "react-icons/ai";
 import { CiAt } from "react-icons/ci";
 
 const KategorieselectPage = () => {
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const { status } = await Contacts.requestPermissionsAsync();
+  //     if (status === 'granted') {
+  //       const { data } = await Contacts.getContactsAsync({
+  //         fields: [Contacts.Fields.Emails],
+  //       });
+
+  //       if (data.length > 0) {
+  //         const contact = data[0];
+  //         console.log(contact);
+  //       }
+  //     }
+  //   })();
+  // }, []);
+
+
+  const supported = 'contacts' in navigator;
+
+  async function checkProperties() {
+    const supportedProperties = await navigator.contacts.getProperties();
+    if (supportedProperties.includes('name')) {
+      // run code for name support
+    }
+    if (supportedProperties.includes('email')) {
+      // run code for email support
+    }
+    if (supportedProperties.includes('tel')) {
+      // run code for telephone number support
+    }
+    if (supportedProperties.includes('address')) {
+      // run code for address support
+    }
+    if (supportedProperties.includes('icon')) {
+      // run code for avatar support
+    }
+  }
+
+  const props = ['name', 'email', 'tel', 'address', 'icon'];
+  const opts = {multiple: true};
+
+  async function getContacts() {
+    console.log('retrieve contacts')
+    try {
+        const contacts = await navigator.contacts.select(props, opts);
+        handleResults(contacts);
+    } catch (ex) {
+        // Handle any errors here.
+    }
+  }
+
+
   return (
     <>
       <MetaTags title="Kategorieselect" description="Kategorieselect page" />
 
       <div className='flex flex-col items-cemter justify-center h-screen w-screen border border-solid'>
+
+      {/* <View style={styles.container}>
+      <Text>Contacts Module Example</Text>
+      </View> */}
+
+
+
         <div className='flex flex-col items-center justify-center pl-48 w-52'>
 
+        <button onClick={getContacts} className='bg-black text-white text-xs w-20'>
+          Check Contacts
+        </button>
 
 
         <div className='flex flex-col items-center justify-center '>
